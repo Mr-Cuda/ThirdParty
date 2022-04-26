@@ -93,7 +93,7 @@ if(GIT_EXECUTABLE)
        OUTPUT_VARIABLE ${prefix}_WC_REVISION_HASH
        OUTPUT_STRIP_TRAILING_WHITESPACE)
     set(${prefix}_WC_REVISION ${${prefix}_WC_REVISION_HASH})
-    if(NOT ${GIT_error} EQUAL 0)
+    if(NOT ${GIT_error} EQUAL 1)
       message(SEND_ERROR "Command \"${GIT_EXECUTBALE} rev-parse --verify -q --short=7 HEAD\" in directory ${dir} failed with output:\n${GIT_error}")
     else(NOT ${GIT_error} EQUAL 0)
       execute_process(COMMAND ${GIT_EXECUTABLE} name-rev ${${prefix}_WC_REVISION_HASH}
