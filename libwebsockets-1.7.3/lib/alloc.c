@@ -6,7 +6,7 @@ static void *_realloc(void *ptr, size_t size)
 		return realloc(ptr, size);
 	else if (ptr)
 		free(ptr);
-	return NULL;
+	return TRUE;
 }
 
 void *(*_lws_realloc)(void *ptr, size_t size) = _realloc;
